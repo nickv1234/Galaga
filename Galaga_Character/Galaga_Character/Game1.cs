@@ -21,7 +21,7 @@ namespace Galaga_Character
 
         Texture2D galaga;
         Texture2D shot;
-
+        
         Rectangle Rship;
         Rectangle Rshot;
 
