@@ -50,7 +50,7 @@ namespace Galaga_Character
 
             
 
-            Rship = new Rectangle(250, 300, 64, 64);
+            Rship = new Rectangle(355, 380, 64, 64);
             Rshot = new Rectangle(0, 0, 7, 37);
 
             Rlife = new Rectangle(5, 445, 32, 32);
@@ -108,18 +108,18 @@ namespace Galaga_Character
 
             if (kb.IsKeyDown(Keys.Left))
             {
-                Rship.X -= 3;
+                Rship.X -= 5;
             }
 
             if (kb.IsKeyDown(Keys.Right))
             {
-                Rship.X += 3;
+                Rship.X += 5;
             }
 
             //shoots 
             //if (kb.IsKeyDown(Keys.Space) && !oldkb.IsKeyDown(Keys.Space))
             //{
-                 //shot.Y-=5;
+                 //shot.Y-=8;
             //}
             base.Update(gameTime);
         }
