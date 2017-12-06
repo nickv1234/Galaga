@@ -28,7 +28,9 @@ namespace Galaga_Character
 
         Rectangle Rship;
         Rectangle Rshot;
-        //helloasdsdasdf
+        Rectangle Rlife;
+        Rectangle Rlife2;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -89,6 +91,8 @@ namespace Galaga_Character
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            KeyboardState kb = Keyboard.GetState();
+
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
