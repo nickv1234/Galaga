@@ -26,7 +26,6 @@ namespace Galaga_Character
         
         Rectangle Rship;
         Rectangle Rshot;
-        //helloasdsdasdf
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -67,7 +66,6 @@ namespace Galaga_Character
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
         /// </summary>
-        /// //hfhaei
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
