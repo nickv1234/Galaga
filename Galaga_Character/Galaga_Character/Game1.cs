@@ -106,7 +106,7 @@ namespace Galaga_Character
                 
             }
             
-            else if(scorenum > highscorenum && Rshot.Intersects(enemy))
+            if(scorenum > highscorenum && Rshot.Intersects(enemy))
             {
                 highscorenum += 100;
                 scorenum += 100;
