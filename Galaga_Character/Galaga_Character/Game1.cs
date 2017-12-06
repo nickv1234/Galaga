@@ -25,7 +25,8 @@ namespace Galaga_Character
         Texture2D shot;
 
         KeyboardState oldkb;
-
+        Rectangle Rlife;
+        Rectangle Rlife2;
         Rectangle Rship;
         Rectangle Rshot;
         //helloasdsdasdf
@@ -92,7 +93,7 @@ namespace Galaga_Character
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            KeyboardState kb = Keyboard.GetState();
             // TODO: Add your update logic here
             
             /*if (Rshot.Intersects(enemy))
