@@ -26,7 +26,7 @@ namespace Galaga_Character
         
         Rectangle Rship;
         Rectangle Rshot;
-        //helloasdsd
+        //helloasdsdasdf
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
