@@ -18,9 +18,9 @@ namespace Galaga_Character
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        SpriteFont font;
-        string scorewords;
-        int scorenum;
+        SpriteFont scorefont;
+        string scorewords, highscorewords;
+        int scorenum, highscorenum;
         Texture2D galaga;
         Texture2D shot;
         
@@ -48,7 +48,8 @@ namespace Galaga_Character
             // TODO: Add your initialization logic here
             oldkb = Keyboard.GetState();
 
-            
+            highscorenum = 2000;
+
 
             Rship = new Rectangle(355, 380, 64, 64);
             Rshot = new Rectangle(1000, 0, 6, 36);
@@ -57,6 +58,7 @@ namespace Galaga_Character
             Rlife2 = new Rectangle(37, 445, 32, 32);
 
             scorewords = "Score: ";
+            highscorewords = "High Score:";
             base.Initialize();
         }
 
@@ -72,7 +74,7 @@ namespace Galaga_Character
             // TODO: use this.Content to load your game content here
             galaga = this.Content.Load<Texture2D>("ship");
             shot = this.Content.Load<Texture2D>("pew");
-
+            scorefont = this.Content.Load<SpriteFont>("ScoreFont");
         }
 
         /// <summary>
@@ -98,14 +100,21 @@ namespace Galaga_Character
                 this.Exit();
 
             // TODO: Add your update logic here
-            
+
             /*if (Rshot.Intersects(enemy))
             {
                 scorenum += 100;
                 
             }
+            
+            else if(scorenum > highscorenum && Rshot.Intersects(enemy))
+            {
+                highscorenum += 100;
+                scorenum += 100;
+            }
             */
 
+            // CHARACTER MOVEMENT
             if (kb.IsKeyDown(Keys.Left))
             {
                 Rship.X -= 5;
@@ -137,6 +146,8 @@ namespace Galaga_Character
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
+            spriteBatch.DrawString(scorefont, highscorewords + highscorenum,new Vector2(0,0) ,Color.White);
+            spriteBatch.DrawString(scorefont, scorewords + scorenum, new Vector2(0, 20), Color.White);
             spriteBatch.Draw(galaga, Rship, Color.White);
             spriteBatch.Draw(shot, Rshot, Color.White);
             spriteBatch.Draw(galaga, Rlife, Color.White);
