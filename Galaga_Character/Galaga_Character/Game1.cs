@@ -22,11 +22,12 @@ namespace Galaga_Character
         string scorewords, highscorewords;
         int scorenum, highscorenum;
         Texture2D galaga;
-        Texture2D shot;
+        Texture2D shot, bgt;
+        int height, width;
         //fje
         KeyboardState oldkb;
         Rectangle Rlife;
-        Rectangle Rlife2;
+        Rectangle Rlife2, bgr;
         Rectangle Rship;
         Rectangle Rshot;
         
@@ -49,14 +50,15 @@ namespace Galaga_Character
             oldkb = Keyboard.GetState();
 
             highscorenum = 2000;
-
+            width = GraphicsDevice.Viewport.Width;
+            height = GraphicsDevice.Viewport.Height;
 
             Rship = new Rectangle(355, 380, 64, 64);
             Rshot = new Rectangle(1000, 0, 6, 36);
 
             Rlife = new Rectangle(5, 445, 32, 32);
             Rlife2 = new Rectangle(37, 445, 32, 32);
-
+            bgr = new Rectangle(0, 0, width, height);
             scorewords = "Score: ";
             highscorewords = "High Score:";
             base.Initialize();
@@ -75,6 +77,7 @@ namespace Galaga_Character
             galaga = this.Content.Load<Texture2D>("ship");
             shot = this.Content.Load<Texture2D>("pew");
             scorefont = this.Content.Load<SpriteFont>("ScoreFont");
+            bgt = this.Content.Load<Texture2D>("stars-6");
         }
 
         /// <summary>
@@ -145,6 +148,7 @@ namespace Galaga_Character
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
+            spriteBatch.Draw(bgt, bgr, Color.White);
             spriteBatch.DrawString(scorefont, highscorewords + highscorenum,new Vector2(0,0) ,Color.White);
             spriteBatch.DrawString(scorefont, scorewords + scorenum, new Vector2(0, 20), Color.White);
             spriteBatch.Draw(galaga, Rship, Color.White);
