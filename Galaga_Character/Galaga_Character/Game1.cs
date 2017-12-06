@@ -28,9 +28,7 @@ namespace Galaga_Character
 
         Rectangle Rship;
         Rectangle Rshot;
-        Rectangle Rlife;
-        Rectangle Rlife2;
-
+        //helloasdsdasdf
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -51,7 +49,7 @@ namespace Galaga_Character
             highscorenum = 2000;
 
 
-            Rship = new Rectangle(250, 300, 64, 64);
+            Rship = new Rectangle(355, 380, 64, 64);
             Rshot = new Rectangle(0, 0, 7, 37);
 
             Rlife = new Rectangle(5, 445, 32, 32);
@@ -93,15 +91,12 @@ namespace Galaga_Character
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            KeyboardState kb = Keyboard.GetState();
-
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
             // TODO: Add your update logic here
-            
-            //SCORE COUNTER AND HIGH SCORE COUNTER
+
             /*if (Rshot.Intersects(enemy))
             {
                 scorenum += 100;
@@ -118,18 +113,18 @@ namespace Galaga_Character
             // CHARACTER MOVEMENT
             if (kb.IsKeyDown(Keys.Left))
             {
-                Rship.X -= 3;
+                Rship.X -= 5;
             }
 
             if (kb.IsKeyDown(Keys.Right))
             {
-                Rship.X += 3;
+                Rship.X += 5;
             }
 
             //shoots 
             //if (kb.IsKeyDown(Keys.Space) && !oldkb.IsKeyDown(Keys.Space))
             //{
-                 //shot.Y-=5;
+                 //shot.Y-=8;
             //}
             base.Update(gameTime);
         }
