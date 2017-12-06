@@ -28,11 +28,6 @@ namespace Galaga_Character
 
         Rectangle Rship;
         Rectangle Rshot;
-        Rectangle Rlife;
-        Rectangle Rlife2;
-
-        
-
 
         public Game1()
         {
@@ -82,7 +77,6 @@ namespace Galaga_Character
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
         /// </summary>
-        /// //hfhaei
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
