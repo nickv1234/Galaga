@@ -18,7 +18,9 @@ namespace Galaga_Character
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
+        SpriteFont font;
+        string scorewords;
+        int scorenum;
         Texture2D galaga;
         Texture2D shot;
         
@@ -42,7 +44,7 @@ namespace Galaga_Character
             // TODO: Add your initialization logic here
             Rship = new Rectangle(0, 0, 64, 64);
             Rshot = new Rectangle(0, 0, 7, 37);
-
+            scorewords = "Score: ";
             base.Initialize();
         }
 
@@ -83,6 +85,12 @@ namespace Galaga_Character
 
             // TODO: Add your update logic here
 
+            /*if (Rshot.Intersects(enemy))
+            {
+                scorenum += 100;
+                
+            }
+            */
             base.Update(gameTime);
         }
 
