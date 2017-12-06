@@ -23,7 +23,7 @@ namespace Galaga_Character
         int scorenum, highscorenum;
         Texture2D galaga;
         Texture2D shot;
-
+        //fje
         KeyboardState oldkb;
         Rectangle Rlife;
         Rectangle Rlife2;
