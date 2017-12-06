@@ -24,7 +24,7 @@ namespace Galaga_Character
         Texture2D galaga;
         Texture2D shot, bgt;
         int height, width;
-        //fje
+        //fjed
         KeyboardState oldkb;
         Rectangle Rlife;
         Rectangle Rlife2, bgr;
