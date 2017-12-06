@@ -29,8 +29,7 @@ namespace Galaga_Character
         Rectangle Rlife2;
         Rectangle Rship;
         Rectangle Rshot;
-        Rectangle Rlife;
-        Rectangle Rlife2;
+        
 
         public Game1()
         {
@@ -99,7 +98,6 @@ namespace Galaga_Character
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            KeyboardState kb = Keyboard.GetState();
             // TODO: Add your update logic here
 
             /*if (Rshot.Intersects(enemy))
