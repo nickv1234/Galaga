@@ -23,10 +23,12 @@ namespace Galaga_Character
         int scorenum;
         Texture2D galaga;
         Texture2D shot;
-        
+
+        KeyboardState oldkb;
+
         Rectangle Rship;
         Rectangle Rshot;
-
+        //helloasdsdasdf
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -42,8 +44,16 @@ namespace Galaga_Character
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            Rship = new Rectangle(0, 0, 64, 64);
+            oldkb = Keyboard.GetState();
+
+            
+
+            Rship = new Rectangle(355, 380, 64, 64);
             Rshot = new Rectangle(0, 0, 7, 37);
+
+            Rlife = new Rectangle(5, 445, 32, 32);
+            Rlife2 = new Rectangle(37, 445, 32, 32);
+
             scorewords = "Score: ";
             base.Initialize();
         }
@@ -67,7 +77,6 @@ namespace Galaga_Character
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
         /// </summary>
-        /// //hfhaei
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
@@ -80,7 +89,6 @@ namespace Galaga_Character
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            KeyboardState kb = Keyboard.GetState();
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
@@ -93,6 +101,22 @@ namespace Galaga_Character
                 
             }
             */
+
+            if (kb.IsKeyDown(Keys.Left))
+            {
+                Rship.X -= 5;
+            }
+
+            if (kb.IsKeyDown(Keys.Right))
+            {
+                Rship.X += 5;
+            }
+
+            //shoots 
+            //if (kb.IsKeyDown(Keys.Space) && !oldkb.IsKeyDown(Keys.Space))
+            //{
+                 //shot.Y-=8;
+            //}
             base.Update(gameTime);
         }
 
@@ -108,6 +132,8 @@ namespace Galaga_Character
             spriteBatch.Begin();
             spriteBatch.Draw(galaga, Rship, Color.White);
             spriteBatch.Draw(shot, Rshot, Color.White);
+            spriteBatch.Draw(galaga, Rlife, Color.White);
+            spriteBatch.Draw(galaga, Rlife2, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
