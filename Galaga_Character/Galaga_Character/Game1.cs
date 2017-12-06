@@ -23,12 +23,14 @@ namespace Galaga_Character
         int scorenum, highscorenum;
         Texture2D galaga;
         Texture2D shot;
-        Rectangle Rlife, Rlife2;
-        KeyboardState kb,oldkb;
+
+        KeyboardState oldkb;
 
         Rectangle Rship;
         Rectangle Rshot;
-        //helloasdsdasdf
+        Rectangle Rlife;
+        Rectangle Rlife2;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -50,7 +52,7 @@ namespace Galaga_Character
 
 
             Rship = new Rectangle(355, 380, 64, 64);
-            Rshot = new Rectangle(0, 0, 7, 37);
+            Rshot = new Rectangle(1000, 0, 6, 36);
 
             Rlife = new Rectangle(5, 445, 32, 32);
             Rlife2 = new Rectangle(37, 445, 32, 32);
@@ -91,6 +93,8 @@ namespace Galaga_Character
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            KeyboardState kb = Keyboard.GetState();
+
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
@@ -122,10 +126,13 @@ namespace Galaga_Character
             }
 
             //shoots 
-            //if (kb.IsKeyDown(Keys.Space) && !oldkb.IsKeyDown(Keys.Space))
-            //{
-                 //shot.Y-=8;
-            //}
+
+            if (kb.IsKeyDown(Keys.Space) && !oldkb.IsKeyUp(Keys.Space))
+            {                                        
+                Rshot = new Rectangle(Rship.X+29 , 380, 6, 36);
+                Rshot.Y -= 8;
+            }
+            oldkb = kb;
             base.Update(gameTime);
         }
 
