@@ -28,6 +28,8 @@ namespace Galaga_Character
 
         Rectangle Rship;
         Rectangle Rshot;
+        Rectangle Rlife;
+        Rectangle Rlife2;
 
         public Game1()
         {
