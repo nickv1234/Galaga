@@ -31,7 +31,7 @@ namespace Galaga_Character
         Rectangle Rship;
         Rectangle Rshot;
         
-
+        
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -48,14 +48,14 @@ namespace Galaga_Character
         {
             // TODO: Add your initialization logic here
             oldkb = Keyboard.GetState();
-
+            graphics.IsFullScreen = true;
             highscorenum = 2000;
             width = GraphicsDevice.Viewport.Width;
             height = GraphicsDevice.Viewport.Height;
 
             Rship = new Rectangle(355, 380, 64, 64);
             Rshot = new Rectangle(1000, 0, 6, 36);
-
+           
             Rlife = new Rectangle(5, 445, 32, 32);
             Rlife2 = new Rectangle(37, 445, 32, 32);
             bgr = new Rectangle(0, 0, width, height);
