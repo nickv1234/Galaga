@@ -23,7 +23,7 @@ namespace Galaga_Character
         int scorenum, highscorenum;
         Texture2D galaga;
         Texture2D shot, bgt;
-        int height, width;
+        int height, width, up;
         //fjedk
         KeyboardState oldkb;
         Rectangle Rlife;
@@ -133,9 +133,9 @@ namespace Galaga_Character
             //shoots 
 
             if (kb.IsKeyDown(Keys.Space) && !oldkb.IsKeyUp(Keys.Space))
-            {                                        
-                Rshot = new Rectangle(Rship.X+29 , 380, 6, 36);
-                Rshot.Y -= 8;
+            {
+                Rshot = new Rectangle(Rship.X + 29, up, 6, 36);
+                up -= 8;
             }
             oldkb = kb;
             base.Update(gameTime);
