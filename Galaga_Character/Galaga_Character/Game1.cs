@@ -36,6 +36,9 @@ namespace Galaga_Character
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferWidth = 600;
+            graphics.PreferredBackBufferHeight = 900;
+            graphics.ApplyChanges();
         }
 
         /// <summary>
@@ -53,11 +56,11 @@ namespace Galaga_Character
             width = GraphicsDevice.Viewport.Width;
             height = GraphicsDevice.Viewport.Height;
 
-            Rship = new Rectangle(355, 380, 64, 64);
+            Rship = new Rectangle(260, 800, 64, 64);
             Rshot = new Rectangle(1000, 0, 6, 36);
            
-            Rlife = new Rectangle(5, 445, 32, 32);
-            Rlife2 = new Rectangle(37, 445, 32, 32);
+            Rlife = new Rectangle(5, 865, 32, 32);
+            Rlife2 = new Rectangle(37, 865, 32, 32);
             bgr = new Rectangle(0, 0, width, height);
             scorewords = "Score: ";
             highscorewords = "High Score:";
