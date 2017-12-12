@@ -58,7 +58,7 @@ namespace Galaga_Character
 
             Rship = new Rectangle(260, 800, 64, 64);
             Rshot = new Rectangle(1000, 0, 6, 36);
-           
+            up = 800;
             Rlife = new Rectangle(5, 865, 32, 32);
             Rlife2 = new Rectangle(37, 865, 32, 32);
             bgr = new Rectangle(0, 0, width, height);
