@@ -64,8 +64,8 @@ namespace Galaga_Character
             up = 800;
             Rlife = new Rectangle(5, 865, 32, 32);
             Rlife2 = new Rectangle(37, 865, 32, 32);
-            rectBackground = new Rectangle(0, -900, 1100, 600);
-            rectBackground2 = new Rectangle(0, 600, 1100, 600);
+            rectBackground = new Rectangle(0, 0, 1100, 600);
+            rectBackground2 = new Rectangle(0, -900, 1100, 600);
             scorewords = "Score: ";
             highscorewords = "High Score:";
             base.Initialize();
@@ -146,11 +146,11 @@ namespace Galaga_Character
 
             //moving background
 
-            if (rectBackground.Y == 600)
-                rectBackground.Y = -600;
+            if (rectBackground.Y == 900)
+                rectBackground.Y = -900;
 
-            if (rectBackground2.Y == 600)
-                rectBackground2.Y = -600;
+            if (rectBackground2.Y == 900)
+                rectBackground2.Y = -900;
             rectBackground.Y += 4;
             rectBackground2.Y += 4;
             base.Update(gameTime);
