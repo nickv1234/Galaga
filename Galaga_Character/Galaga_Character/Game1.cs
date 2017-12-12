@@ -22,7 +22,7 @@ namespace Galaga_Character
         string scorewords, highscorewords;
         int scorenum, highscorenum;
         Texture2D galaga;
-        Texture2D shot, bgt;
+        Texture2D shot;
         int height, width, up;
         //fjedk
         KeyboardState oldkb;
@@ -31,7 +31,10 @@ namespace Galaga_Character
         Rectangle Rship;
         Rectangle Rshot;
         //t4w
-        
+
+        Texture2D textBackground, textBackground2;
+        Rectangle rectBackground, rectBackground2;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -61,7 +64,8 @@ namespace Galaga_Character
             up = 800;
             Rlife = new Rectangle(5, 865, 32, 32);
             Rlife2 = new Rectangle(37, 865, 32, 32);
-            bgr = new Rectangle(0, 0, width, height);
+            rectBackground = new Rectangle(0, 0, 1100, 600);
+            rectBackground2 = new Rectangle(0, -600, 1100, 600);
             scorewords = "Score: ";
             highscorewords = "High Score:";
             base.Initialize();
@@ -80,7 +84,8 @@ namespace Galaga_Character
             galaga = this.Content.Load<Texture2D>("ship");
             shot = this.Content.Load<Texture2D>("pew");
             scorefont = this.Content.Load<SpriteFont>("ScoreFont");
-            bgt = this.Content.Load<Texture2D>("stars-6");
+            textBackground = this.Content.Load<Texture2D>("stars-6");
+            textBackground2 = this.Content.Load<Texture2D>("stars-6");
         }
 
         /// <summary>
@@ -138,6 +143,16 @@ namespace Galaga_Character
                 up -= 8;
             }
             oldkb = kb;
+
+            //moving background
+
+            if (rectBackground.Y == 600)
+                rectBackground.Y = -600;
+
+            if (rectBackground2.Y == 600)
+                rectBackground2.Y = -600;
+            rectBackground.Y += 4;
+            rectBackground2.Y += 4;
             base.Update(gameTime);
         }
 
@@ -151,7 +166,8 @@ namespace Galaga_Character
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            spriteBatch.Draw(bgt, bgr, Color.White);
+            spriteBatch.Draw(textBackground, rectBackground, Color.White);
+            spriteBatch.Draw(textBackground2, rectBackground2, Color.White);
             spriteBatch.DrawString(scorefont, highscorewords + highscorenum,new Vector2(0,0) ,Color.White);
             spriteBatch.DrawString(scorefont, scorewords + scorenum, new Vector2(0, 20), Color.White);
             spriteBatch.Draw(galaga, Rship, Color.White);
