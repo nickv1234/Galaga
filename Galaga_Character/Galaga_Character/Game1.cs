@@ -64,8 +64,8 @@ namespace Galaga_Character
             up = 800;
             Rlife = new Rectangle(5, 865, 32, 32);
             Rlife2 = new Rectangle(37, 865, 32, 32);
-            rectBackground = new Rectangle(0, 0, 1100, 600);
-            rectBackground2 = new Rectangle(0, -900, 1100, 600);
+            rectBackground = new Rectangle(0, 0, 1100, 900);
+            rectBackground2 = new Rectangle(0, -900, 1100, 900);
             scorewords = "Score: ";
             highscorewords = "High Score:";
             base.Initialize();
