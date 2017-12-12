@@ -30,7 +30,7 @@ namespace Galaga_Character
         Rectangle Rlife2, bgr;
         Rectangle Rship;
         Rectangle Rshot;
-        
+        //t4w
         
         public Game1()
         {
