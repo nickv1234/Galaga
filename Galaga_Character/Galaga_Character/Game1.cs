@@ -32,6 +32,7 @@ namespace Galaga_Character
         Rectangle Rship;
         Rectangle Rshot;
         Rectangle Renemy;
+        Color c = Color.White;
         //t4w
 
         Texture2D textBackground, textBackground2;
@@ -115,18 +116,19 @@ namespace Galaga_Character
                 this.Exit();
             // TODO: Add your update logic here
 
-            /*if (Rshot.Intersects(enemy))
+            if (Rshot.Intersects(Renemy))
             {
                 scorenum += 100;
-                
+                c = Color.Transparent;
+
             }
             
-            if(scorenum > highscorenum && Rshot.Intersects(enemy))
+            if(scorenum > highscorenum && Rshot.Intersects(Renemy))
             {
                 highscorenum += 100;
                 scorenum += 100;
             }
-            */
+            
 
             // CHARACTER MOVEMENT
             if (kb.IsKeyDown(Keys.Left))
@@ -175,10 +177,10 @@ namespace Galaga_Character
             spriteBatch.DrawString(scorefont, highscorewords + highscorenum,new Vector2(0,0) ,Color.White);
             spriteBatch.DrawString(scorefont, scorewords + scorenum, new Vector2(0, 20), Color.White);
             spriteBatch.Draw(galaga, Rship, Color.White);
-            spriteBatch.Draw(shot, Rshot, Color.White);
+            spriteBatch.Draw(shot, Rshot,c);
             spriteBatch.Draw(galaga, Rlife, Color.White);
             spriteBatch.Draw(galaga, Rlife2, Color.White);
-            spriteBatch.Draw(enemy, Renemy, Color.White);
+            spriteBatch.Draw(enemy, Renemy, c);
             spriteBatch.End();
             base.Draw(gameTime);
         }
