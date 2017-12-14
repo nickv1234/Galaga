@@ -23,6 +23,7 @@ namespace Galaga_Character
         int scorenum, highscorenum;
         Texture2D galaga;
         Texture2D shot;
+        Texture2D enemy;
         int height, width, up;
         //fjedk
         KeyboardState oldkb;
@@ -30,6 +31,7 @@ namespace Galaga_Character
         Rectangle Rlife2, bgr;
         Rectangle Rship;
         Rectangle Rshot;
+        Rectangle Renemy;
         //t4w
 
         Texture2D textBackground, textBackground2;
@@ -66,6 +68,7 @@ namespace Galaga_Character
             Rlife2 = new Rectangle(37, 865, 32, 32);
             rectBackground = new Rectangle(0, 0, 1100, 900);
             rectBackground2 = new Rectangle(0, -900, 1100, 900);
+            Renemy = new Rectangle(260, 200, 64, 64);
             scorewords = "Score: ";
             highscorewords = "High Score:";
             base.Initialize();
@@ -86,6 +89,7 @@ namespace Galaga_Character
             scorefont = this.Content.Load<SpriteFont>("ScoreFont");
             textBackground = this.Content.Load<Texture2D>("stars-6");
             textBackground2 = this.Content.Load<Texture2D>("stars-6");
+            enemy = this.Content.Load<Texture2D>("enemy");
         }
 
         /// <summary>
@@ -174,6 +178,7 @@ namespace Galaga_Character
             spriteBatch.Draw(shot, Rshot, Color.White);
             spriteBatch.Draw(galaga, Rlife, Color.White);
             spriteBatch.Draw(galaga, Rlife2, Color.White);
+            spriteBatch.Draw(enemy, Renemy, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
